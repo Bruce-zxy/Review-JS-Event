@@ -1,0 +1,27 @@
+{
+  "name": "d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
+    "build": "webpack --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bruce-zxy/Review-JS-Event-.git"
+  },
+  "author": "bruce-zxy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bruce-zxy/Review-JS-Event-/issues"
+  },
+  "homepage": "https://github.com/Bruce-zxy/Review-JS-Event-#readme",
+  "description": "",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "nodemon": "^1.11.0",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

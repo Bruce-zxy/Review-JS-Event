@@ -71,7 +71,7 @@
 
 </body>
 
-<script src="https://cdn.logrocket.com/LogRocket.min.js"></script>
+<!-- <script src="https://cdn.logrocket.com/LogRocket.min.js"></script> -->
 <!-- <script src="./canvas-particular.jsx"></script> -->
 
 
@@ -79,7 +79,23 @@
 <script type="text/javascript">
 
 	particlesJS.load('particles-js', 'http://localhost/d/particular.json', function() {
-	  console.log('callback - particles.js config loaded');
+		var cv = document.getElementsByClassName('particles-js-canvas-el')[0];
+		var ctx = cv.getContext('2d');
+		var bg = new Image();
+		bg.src = './canvas-bg.png';
+		if(bg.complete) {
+			ctx.drawImage(bg, 0, 0);
+			console.log('complete');
+		} else {
+			bg.onload = function(){
+		     	ctx.drawImage(bg, 0, 0);
+		    	console.log('complete1');
+		    }
+		    bg.onerror = function(){
+		        window.alert('美女加载失败，请重试');
+		    };
+		}
+	  	console.log('callback - particles.js config loaded');
 	});
 
 	// window.onload = function () {
@@ -107,18 +123,18 @@
 </script>
 
 <script>
-	window.LogRocket && window.LogRocket.init('nciere/test');
-	var bruce = 'bruce';
-	var zxy = 'zxy';
-	var name = `${bruce}${zxy}`;
-	// This is an example script - don't forget to change it!
-	LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
-	    name: name,
-	    email: 'bruce_zxy@163.com',
+	// window.LogRocket && window.LogRocket.init('nciere/test');
+	// var bruce = 'bruce';
+	// var zxy = 'zxy';
+	// var name = `${bruce}${zxy}`;
+	// // This is an example script - don't forget to change it!
+	// LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+	//     name: name,
+	//     email: 'bruce_zxy@163.com',
 
-	    // Add your own custom user variables here, ie:
-	    subscriptionType: 'pro'
-	});
+	//     // Add your own custom user variables here, ie:
+	//     subscriptionType: 'pro'
+	// });
 </script>
 <!------分------割------线------>
 </html>

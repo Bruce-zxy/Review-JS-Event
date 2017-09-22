@@ -1,0 +1,84 @@
+.icon_sunny { background-image: url(../image/weather/晴（白天）.png); }
+.icon_cloudy { background-image: url(../image/weather/多云.png); }
+.icon_overvast { background-image: url(../image/weather/阴天.png); }
+.icon_fog { background-image: url(../image/weather/雾.png); }
+.icon_lightrain { background-image: url(../image/weather/小雨.png); }
+.icon_heavyrain { background-image: url(../image/weather/大雨.png); }
+.icon_shower { background-image: url(../image/weather/阵雨.png); }
+.icon_thundershower { background-image: url(../image/weather/雷阵雨.png); }
+.icon_lightsnow { background-image: url(../image/weather/小雪.png); }
+.icon_heavysnow { background-image: url(../image/weather/大雪.png); }
+.icon_unknown { background-image: url(../image/weather/未知.png); }
+.text-big { font-size: 22px; }
+
+
+#weather {
+	height: 350px;
+	width: 850px;
+	border-radius: 10px;
+	background-image: linear-gradient(to top, rgba(32, 156, 255, .6) 0%, rgba(104, 184, 207, .6) 100%);
+}
+#weather>p {
+	margin: 0;
+	padding: 10px 20px;
+	color: #fff;
+	height: 30px;
+	line-height: 30px;
+}
+#weather>p span:first-child {
+	margin-right: 15px;
+}
+.weather_panel {
+	width: 100%;
+	font-size: 0;
+	height: calc(100% - 50px);
+}
+.weather_panel>span {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 15%;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+}
+.weather_panel>span:hover {
+	cursor: pointer;
+	background-color: rgba(99, 116, 194, .6);
+}
+.weather_panel>span:first-child {
+	width: 25%;
+}
+.weather_panel>span>div {
+	display: inline-block;
+	width:100%;
+	position: relative;
+	top: 50%;
+	margin-top: -84px;
+}
+.weather_panel>span p {
+	margin: 5px 0;
+}
+.weather_panel>span p.realtime {
+	margin: 11px 0;
+}
+.weather_panel .icon_weather {
+	display: block;
+	margin: 15px auto;
+	width: 40px;
+	height: 35px;
+	background-size: 100% 100%;
+}
+.weather_panel .span_split {
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1px;
+    height: 180px;
+    background: #fff;
+    filter: alpha(opacity=15);
+    opacity: 0.15;
+}

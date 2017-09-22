@@ -5,40 +5,6 @@
     <meta charset="UTF-8">
     <meta name="Author" content="Bruce Zhu">
     <title>JS事件属性进阶复习</title>
-	<style>
-		body {
-			margin: 0;
-			font-size: 0;
-		}
-		div {
-			margin: 0;
-			display: inline-block;
-			width: 25rem;
-			height: 10rem;
-			background: #F9CC9D;
-			font-size: 2rem;
-		}
-		span {
-			/*width: 40px;*/
-			height: 20px;
-			padding: .1rem .2rem;
-			font-size: .8rem;
-			line-height: .8rem;
-			border: 1px solid red;
-		}
-		#canvas{
-			width: 100%;
-			height: 100%;
-		}
-		#particles-js {
-			width: 100%;
-			height: 100%;
-			background-color: transparent;
-			background-image: url(./canvas-bg.png);
-			background-repeat: no-repeat;
-			background-size: 100% 100%;
-		}
-	</style>
 	<script>
 		// console.log(document.documentElement.clientWidth);
 		// for (i in document) {
@@ -46,6 +12,10 @@
 		// }
 		// console.log(document.documentElement.style.fontSize = document.documentElement.clientWidth / 100);
 	</script>
+	<style>
+		
+	</style>
+	<link rel="stylesheet" href="./css/weather.css">
 </head>
 <!------分------割------线------>
 
@@ -67,7 +37,75 @@
 	<hr>
 
 	<span>旅游热线</span><span>嘻嘻嘻</span> -->
-	<div id="fixedGrid" style="background-color: red;height: 70px;width: 750px;font-size: 50px;color: #fff;">分开就发生</div>
+	<div id="weather">
+		<p class="day"><span>2017年09月15日</span><span>周五</span></p>
+		<div class="weather_panel">
+			<span>
+			<div>
+				<i class="icon_weather icon_sunny"></i>
+				<p class="realtime"><span class="text-big">25℃</span>（实时）</p>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">小雨转多云</p>
+				<p class="windy">西北风3-4级</p>
+			</div>
+			</span>
+			<span>
+			<div>
+				<p class="week">周六</p>
+				<p class="month_day">09月16日</p>
+				<i class="icon_weather icon_cloudy"></i>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">多云</p>
+				<p class="windy">西北风3-4级</p>
+				<div class="span_split"></div>
+			</div>
+			</span>
+			<span>
+			<div>
+				<p class="week">周日</p>
+				<p class="month_day">09月16日</p>
+				<i class="icon_weather icon_shower"></i>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">多云</p>
+				<p class="windy">西北风3-4级</p>
+				<div class="span_split"></div>
+			</div>
+			</span>
+			<span>
+			<div>
+				<p class="week">周一</p>
+				<p class="month_day">09月16日</p>
+				<i class="icon_weather icon_lightrain"></i>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">多云</p>
+				<p class="windy">西北风3-4级</p>
+				<div class="span_split"></div>
+			</div>
+			</span>
+			<span>
+			<div>
+				<p class="week">周二</p>
+				<p class="month_day">09月16日</p>
+				<i class="icon_weather icon_thundershower"></i>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">多云</p>
+				<p class="windy">西北风3-4级</p>
+				<div class="span_split"></div>
+			</div>
+			</span>
+			<span>
+			<div>
+				<p class="week">周三</p>
+				<p class="month_day">09月16日</p>
+				<i class="icon_weather icon_lightsnow"></i>
+				<p class="temp">22 - 27℃</p>
+				<p class="weather">多云</p>
+				<p class="windy">西北风3-4级</p>
+				<div class="span_split"></div>
+			</div>
+			</span>
+		</div>
+	</div>
 
 	<!-- <canvas id="canvas"></canvas> -->
 	<!-- <div id="particles-js"></div> -->
@@ -109,34 +147,22 @@
 	// 		};
 	// 	};
 	// }
-	setInterval(function () {
-		var textArr = document.getElementById('fixedGrid').innerHTML.split('');
-		textArr.push('厉');
-		var textStr = textArr.join('');
-		var fontSize = /\d+/.exec(getComputedStyle(document.getElementById('fixedGrid'), null).fontSize)[0]*1;
-		var width = /\d+/.exec(getComputedStyle(document.getElementById('fixedGrid'), null).width)[0]*1;
-		var len = textArr.length;
-		if(fontSize*len > width) {
-			document.getElementById('fixedGrid').style.fontSize = (width/len)+'px';
-		}
-		document.getElementById('fixedGrid').innerHTML = textStr;
-	}, 2000);
 	
 </script>
 
 <script>
-	// window.LogRocket && window.LogRocket.init('nciere/test');
-	// var bruce = 'bruce';
-	// var zxy = 'zxy';
-	// var name = `${bruce}${zxy}`;
-	// // This is an example script - don't forget to change it!
-	// LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
-	//     name: name,
-	//     email: 'bruce_zxy@163.com',
+	window.LogRocket && window.LogRocket.init('nciere/test');
+	var bruce = 'bruce';
+	var zxy = 'zxy';
+	var name = `${bruce}${zxy}`;
+	// This is an example script - don't forget to change it!
+	LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+	    name: name,
+	    email: 'bruce_zxy@163.com',
 
-	//     // Add your own custom user variables here, ie:
-	//     subscriptionType: 'pro'
-	// });
+	    // Add your own custom user variables here, ie:
+	    subscriptionType: 'pro'
+	});
 </script>
 <!------分------割------线------>
 </html>

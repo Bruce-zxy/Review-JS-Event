@@ -106,6 +106,8 @@
 			</span>
 		</div>
 	</div>
+	<input id="input" type="text">
+	<canvas id="canvas"></canvas>
 
 </body>
 
@@ -115,6 +117,35 @@
 <script src="./bundle.js"></script>
 <script type="text/javascript">
 
+	var text = ''
+
+	var bg = new Image();
+	bg.src = './canvas-text.png';
+
+	var canvas=document.getElementById('canvas');
+	canvas.width = 400;
+	canvas.height = 400;
+
+	var ctx=canvas.getContext('2d');
+	bg.onload = function() {
+	    ctx.drawImage(bg, 0, 0);
+	    //设置字体样式
+        ctx.font = "12px 微软雅黑";
+        //设置字体填充颜色
+        ctx.fillStyle = "black";
+        //从坐标点(50,50)开始绘制文字
+        ctx.fillText(text, 35, 230);
+	}
+
+	var input = document.getElementById('input');
+	input.onchange = function () {
+		text = this.value;
+		ctx.fillText(text,35,230);
+	}
+
+
+	
+	
 	
 </script>
 

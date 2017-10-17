@@ -230,6 +230,8 @@
 
 </body>
 
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <script src="https://cdn.logrocket.com/LogRocket.min.js"></script>
 
 
@@ -298,6 +300,43 @@
 	}
 
 
+	// 测试数据 start
+	function postData(req, opt) {
+		var address = "http://117.169.87.75:4646/Service/Index";
+		var appid = 10000;
+		var appkey = "1b0b9d63-23f2-43bd-815f-8b63bd62d046";
+		var datas = {
+			action: req,
+			key: appkey,
+			appid: appid
+		}
+		if(opt) datas.option = opt;
+		$.post(address, datas, function(data) {
+				console.log(JSON.parse(data));
+			}
+		);
+	}
+	var reqArr = ["StatisticsForRealTime","StatisticsForTouristPortrait","StatisticsForSource","WeatherForRealTime","WeatherForFiveDay","WeatherForPM","WeatherForPMLastDays","ParkingForRealTime","ParkingForDayTheVehicle","ParkingForLotUsage","ParkingForFee","CruiseForShipRealTime","CruiseForUsed"];
+	var reqArrnd = ["StatisticsForHistoricalDayTraffic","ParkingForLotAccessToVehicles","ParkingForDayOutOfTime","CruiseForInAndOut","CruiseForPositioning"]
+	var count = 0;
+	var count2 = 0
+	var len = reqArr.length;
+	var len2 = reqArrnd.length;
+	var delay = 500
+
+	var time = setInterval(function () {
+		console.log("%c "+reqArr[count], 'background:#eee;color:#0af');
+		postData(reqArr[count++]);
+		count === len ? clearInterval(time) : "";
+	}, delay);
+
+	var time2 = setInterval(function () {
+		console.log("%c "+reqArrnd[count2], 'background:#eee;color:#0af');
+		postData(reqArrnd[count2++], "in");
+		count2 === len2 ? clearInterval(time2) : "";
+	}, delay);
+    
+    // 测试数据 end
 	
 	
 	
